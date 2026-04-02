@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Frame Relay</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>개요</h3>
+      <p>ISP 회선에 접속하여 WAN에 참여하고자 할 때 패킷 스위칭 방식을 사용할 경우
+        라우터에서 해당 프로토콜을 설정합니다. 이더넷과의 차이점은 브로드캐스트 방식을 사용하지 않고
+        virtual circuit(가상 인터페이스)을 통해서만 통신한다는 점입니다.<br>
+        프레임 릴레이의 encapsulation 방식은 IETF의 표준화 방식과 cisco만의 비표준화 방식이 있는데
+        cisco 장비들끼리 통신할 경우 cisco 방식을 default로 사용하고 타사 장비와의 통신시 IETF 설정을 합니다.
+        </p>
+      <h3>DLCI(Data-Link Connection Identifier)</h3>
+      <p>DLCI라는 내부 식별자를 사용합니다. 하나의 물리적 회선을 여러 개의 논리적 회선으로
+        나누어 사용하는데 각각의 논리 회선(채널)에 DLCI를 부여합니다.</p>
+        <h3>LMI</h3>
+        <p>LMI는 인터페이스의 동작 상태, DLCI 정보등을 담아 알려주는 역할을 하는데
+          타입이 다양해서(Cisco , ansi, q993a) 통신하고자 하는 ISP와 버전을 통일해야합니다. 요즘 라우터들은 알아서 맞추기 때문에 따로 설정해줄 필요는 없습니다.</p>
+        <h3>동작 과정</h3>
+        <p> 1.피지컬인터페이스(서브인터페이스의 원래 인터페이스) 설정<br>
+          LMI 타입 설정, encapsulation 방식 설정</p>
+         <p>2.서브인터페이스 생성 및 설정<br>
+          인터페이스 타입 설정, DLCI 연결 설정, IP 설정</p>
+          <p>*DLCI 수동 연결 설정<br>
+          P2P의 경우:frame-relay interface-dlci [Local DLCI Number]<br>
+          그외(Multi-point...)의 경우:frame-relay map [protocol] [Address to map] [Local DLCI Number] broadcast</p>
+          <p>*프레임 릴레이 스위치 설정<br>
+          스위치의 역할을 해서 스위치라고 하지만 라우터에 설정해주는 기능입니다.
+          frame-relay switching 이라고 설정하면 해당 라우터는 프레임 릴레이 스위치의 역할을 수행합니다.
+          해당 라우터의 인터페이스에는 ip를 부여할 필요없이 frame-relay route [Source DLCI Number] interface [port/slot] [Destination DLCI Number]만 설정합니다.</p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>WAN<br>Framing protocol</p>
+        <ul>
+          <li><a style="color:#F0EAD6;" href="PPP.html">PPP</a></li>
+          <li><a style="color:#F0EAD6;" href="Frame Relay.html">Frame Relay</a></li>
+        </ul>
+        <p>Wireless<br>Framing protocol</p>
+      <ul><li><a style="color:#F0EAD6;" href="IEEE 802.11.html">IEEE 802.11</a></li></ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>Virtual Circuit</h4>
+        SVC (switched):새로운 VC를 구축하여 사용<br>
+        PVC (Permanent): 미리 정해진 VC를 영구적으로 사용</p>
+  </aside>
+
+</body>
+</html>

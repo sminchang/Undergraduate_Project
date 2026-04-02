@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Connector</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>개요</h3>
+      <p>단자(port, connector): 물리적 영역에서 데이터의 출입구를 의미합니다.<br>
+        Interface: 논리적 영역에서 데이터의 출입구를 의미합니다.<br>
+        <span style="font-size:small;">(해당 단어들은 혼용되어 사용되는 경우가 많으나 결국 어떠한 매체 사이의 출입구를 의미합니다.)<br>
+          (인터페이스가 좀더 포괄적 의미로 쓰이기에 여기서는 인터페이스로 지칭합니다.)</span></p>
+      <h3>드라이브 통신 인터페이스</h3>
+      <p>(대중화) parallel ATA(IDE규격) -> Serial ATA(AHCI규격) -> SSD(NVMe 규격)<br>
+        (애플) SCSI ->SAS(Serial Attached SCSI) -> IEEE1394  -> Thunderbolt</p>
+      <h3>내부 인터페이스(Main board)</h3>
+      <p>CPU: 양자독점인 AMD와 인텔에서 단자 규격을 만들기 나름입니다.<br>
+        RAM: 규격이 DDR1~4까지 있으며 규격마다 동작 방식과 단자의 모양이 다릅니다.<br>
+        ROM: 메인보드에 납땜돼서 나오는 경우가 대부분이라 인터페이스라고 할게 없습니다.
+        </p>
+      <h3>외부 인터페이스</h3>
+      <p>PS/2 & RS-232C(직렬포트) & DB-25(병렬포트) -> USB 1.1 -> USB 2.0 -> USB 3.1</p>
+      <p>RJ-45: LAN선, LAN카드와 연결<br><br>
+        RJ-11: 유선 전화선</p>
+      <h3>확장 카드 인터페이스</h3>
+      <p>ISA -> PCI -> PCI-E</p>
+      <h3>비디오 인터페이스</h3>
+      <p>아날로그 방식: D-sub(=RGB=VGA): 음성 신호는 전달을 못합니다.</p>
+      <p>디지털 방식 (음성+영상 신호 전송이 가능합니다.)<br>
+        DVI -> DisplayPort : 여러 기업이 모여 표준을 정한 것이라 특허 사용료가 없습니다.
+        HDMI보다 대역폭이 높습니다(하지만 후발주자라 보급 속도는 더딥니다.)<br>
+        HDMI: DisplayPort보다 성능도 떨어지고 소니의 특허료가 있지만 먼저 출시되어 대중화에 성공해 아직까지 자리를 차지하고 있습니다.</p>
+      <h3>오디오 인터페이스</h3>
+      <p>XLR: 마이크 단자로 통용되며 아날로그 신호를 전송할 때 사용합니다.<br>
+        TRS: 폰플러그잭의 6.35mm(보통5.5mm라고 함)를 절연 Ring의 갯수에 따라 TRRS, TRRRS라고도 합니다.
+        기타,엠프,헤드폰 등에 사용됩니다. (=폰플러그잭: 2.5mm, 3.5mm(이어폰 단자), 6.35mm(보통 TRS라고 하면 이걸 말합니다.))<br>
+        스피콘: 스피커용 단자로 대형 엠프나 스피커에서 사용</p>
+      <h3>전원 인터페이스<span style="font-size:small;">(전기 콘센트)</span></h3>
+      <p>우리나라: Type-F<br>
+        유럽: Type-C <br>아메리카: Type-A<br>중국,호주: Type-I ......</p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+      <ul>
+        <li></li>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>중개기 포트 유형</h4>
+      USB: USB가 범용성을 갖춰감에 따라 USB 포트도 제공되는 경우가 많아지고 있습니다.<br>
+      RJ-45: serial port로 인터넷 연결에 사용하며 주로 UTP 케이블을 연결합니다.<br>
+      PoE(power over Ethernet): 이더넷 케이블에 데이터만 실어보내는 것이 아니라 전원도 같이 보냅니다.(AP, IP 감시 카메라...)<br>
+      SFP(small formfactor pluggable): 광케이블 접속 방식 중 하나입니다.</p>
+  </aside>
+
+</body>
+</html>

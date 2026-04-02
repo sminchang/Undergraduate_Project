@@ -1,0 +1,186 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Cisco CLI</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>Mode Type</h3>
+      <p>(0.setup mode)</p>
+      <p>1.(user) EXEC mode<br>
+        → (initial mode)<br>
+        - 'ping', 'traceroute'</p>
+      <p>2.privileged EXEC mode<br>
+        → >enable<br>
+        - (running) 'config' access</p>
+      <p>3.(global) configuration mode<br>
+        → #configure terminal<br>
+        - 'hostname', 'privileged EXEC password'</p>
+      <p>3-1.interface (config)<br>
+        → (config)#interface [Interface Type Slot/Port]<br>
+        - 'ip'</p>
+      <p>3-2.routing protocol (config)<br>
+        → (...)<br>
+        - 'rip', 'ospf', 'eigrp'</p>
+      <p>3-3.line (config)<br>
+        → (config)#line vty [minimum] [maximum]<br>
+        → (config)#line console 0<br>
+        (→ switch(config)#vlan)</p>
+      <p>3-4.various other</p>
+      <p>4.RXROOT mode<br>
+        (for restoration)</p>
+      <h3>hot keys</h3>
+      <p>Ctrl+C → cancels any command and returns directly to privileged EXEC mode</p>
+      <p>Ctrl+Z → returns to privileged EXEC mode</p>
+      <p>"exit" → returns to previous mode</p>
+      <p>tab → completes the remainder of keyword</p>
+      <p>? → command help of current mode</p>
+      <p>Ctrl+P → Recalls commands in the history buffer of past typing command</p>
+      <p>Ctrl+N(ctrl+p쓰다가 앞으로 넘겨보고싶을 때)</p>
+      <h3>show command</h3>
+      <p>#show startup-config(=show config)<br>:NVRAM에 저장된 백업 구성 파일 정보 확인</p>
+      <p>#show running-config<br>:RAM에서 현재 사용중인 구성 파일 정보 확인</p>
+      <p>#show version<br>:라우터의 기본 정보 확인</p>
+      <p>#show interface (+port number)<br>:(해당or모든) 인터페이스의 현재 상태 확인</p>
+      <P>#show flash<br>:플래시 메모리 정보 확인</P>
+      <p>#show processes cpu<br>:라우터의 현재 동작 상태 확인</p>
+      <p>#show ip route<br>:</p>
+      <h3>memory command</h3>
+      <p>#write memory<br>:RAM에서 설정 중이던 구성을 NVRAM에 백업합니다.</p>
+      <p>#configure memory<br>:RAM에서 설정 중이던 구성을 전에 NVRAM에 백업된 내용으로 덮어씁니다.</p>
+      <p>#erase startup-config<br>:NVRAM에 저장된 구성 파일을 지워버립니다.</p>
+      <h3>password command</h3>
+      <p>(config)#enable password [password]<br>:privileged mode 접속에 필요한 암호를 설정합니다. show command로 암호를 확인할 수 있습니다. secret command보다 우선순위가 낮아 secret 설정이 없는 경우만 비밀번호로 사용됩니다.</p>
+      <p>(config)#enable secret [password]<br>:privileged mode 접속에 필요한 암호를 설정합니다. 자체 암호화가 한 번 더 이루어져 show command로도 암호를 알 수 없습니다. (잘 사용하지 않는 명령어입니다.)</p>
+      <p>(config)#line vty [minimum] [maximum]<br>
+        (config-line)#login<br>
+         (config-line)#password [password]<br>:telnet 접속에 필요한 암호를 설정합니다.</p>
+      <p>(config)#line con 0<br>
+        (config-line)#login<br>
+        (config-line)#password [password]<br>:console 접속에 필요한 암호를 설정합니다.</p>
+        <p>(config)#line aux 0<br>
+          (config-line)#login<br>
+          (config-line)#password [password]<br>:aux 접속에 필요한 암호를 설정합니다.</p>
+        <h3></h3>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+      <ul>
+        <li></li>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>NVRAM</h4>
+    :RAM은 전원이 꺼지면 초기화되기 때문에 저장이 필요한 구성 파일의 내용을 NVRAM에 저장합니다.</p>
+    <p><h4>Flash Memory</h4>
+    :NVRAM은 구성파일만 저장할 정도의 용량을 가집니다. IOS의 이미지 파일같이 용량이 큰 파일을 저장하는데는 플래시 메모리를 사용합니다.</p>
+    <p><h4>중개장치 CLI 접근 방법</h4>
+    telnet / TFTP server / modem / console / NMS</p>
+    <p><h4>cancel command</h4>
+    :취소하고자 하는 명령의 맨 앞 칸에 "no"를 붙여서 다시 명령하면 됩니다.</p>
+    <p><h4>#banner motd</h4>
+    해당 중개장치의 역할 및 목적을 소개하는 글을 남길 수 있습니다..<span style="font-size:small;">(Message Of The Day)</span></p>
+    <p><h4>#description</h4>
+    중개장치의 인터페이스마다 역할 및 목적을 소개하는 글을 남길 수 있습니다.</p>
+  </aside>
+
+</body>
+</html>

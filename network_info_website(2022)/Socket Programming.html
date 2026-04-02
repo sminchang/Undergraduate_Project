@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Socket Programming</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>Socket</h3>
+      <p>Unix에서 처음 도입한 개념으로 네트워크 프로그래밍에서 사용하는 기본 API입니다.
+        파일 입출력과 유사하게 외부 노드와 입출력을 주고받는데 필요한 기능을 제공합니다.
+        파일 인터페이스를 구축하여 읽고 쓰는 것처럼 소켓 인터페이스를 구축하여 읽고 쓰기 등의 기능을 수행합니다.
+      </p>
+
+      <h3>소켓 연결 절차</h3>
+      <p>
+        int socket(int family, int type, int protocol)<br>
+        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 새로운 소켓(통신을 위한 인터페이스)을 생성합니다.<br>
+        :return socket_fd</p>
+
+        <p>int bind(int server_socket_fd, struct sockaddr *server_addr, sizeof(*server_addr))<br>
+        :<span style="color:rgb(74, 19, 175);">(server)</span> 지정 소켓에 ip와 port 정보가 담긴 sockaddr를 묶어줍니다.<br>
+        :return 0(성공) || -1(실패)</p>
+
+        <p>int listen(int server_socket_fd, int backlog)<br>
+        :<span style="color:rgb(74, 19, 175);">(server)</span> binding된 소켓이 요청을 받을 수 있도록 연결 대기 큐를 생성합니다.<br>
+        -backlog: 생성하는 연결 대기 큐의 크기, 최대 연결 가능한 클라이언트 수를 설정합니다.<br>
+        :return 0(성공) || -1(실패)</p>
+
+        <p>int connect(int client_socket_fd, struct sockaddr *server_addr, sizeof(*server_addr))<br>
+        :<span style="color:rgb(74, 19, 175);">(client)</span> client가 자신의 소켓을 통해 원하는 server의 ip와 port 정보를 담은 sockaddr을 전송합니다.<br>
+        :return 0(성공) || -1(실패)</p>
+
+        <p>int accept(int server_socket_fd, struct sockaddr *client_addr, sizeof(*client_addr))<br>
+        :<span style="color:rgb(74, 19, 175);">(server)</span> 연결 대기 큐에 들어온 connect() 요청을 수락하고, 요청별로 client 주소 정보를 담은 새로운 소켓에 연결합니다.<br>
+        :return sub_socket_fd || -1(실패)</p>
+
+        <p>int send(int writer_socket_fd, const void* buf, int length, int flags)<br>
+        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 연결된 소켓을 통해 buffer에 데이터를 담아 전송합니다. flags는 주로 0이며 추가 설정에 사용됩니다.<br>
+        :return 보낸 바이트 수 || -1(실패)</p>
+
+        <p>int recv(int reader_socket_fd, const void* buf, int length, int flags)<br>
+        :<span style="color:rgb(74, 19, 175);">(server, client)</span> 호출되면 데이터가 도착할 때까지 대기 상태에 있습니다. 데이터가 도착하면 연결된 소켓을 통해 buffer로 데이터를 전송받습니다. flags는 주로 0이며 추가 설정에 사용됩니다.<br>
+        :return 받은 바이트 수 || -1(실패)</p>
+
+        <p>int close(int socket_fd)<br>
+        :<span style="color:rgb(74, 19, 175);">(server, client)</span>해당 소켓의 연결 상태를 종료합니다.<br>
+        :(사용이 끝난 소켓은 닫아줘야 메모리 누수 등의 문제를 야기하지 않는다.)
+        :return 0(성공) || -1(실패)</p>
+
+      <h3>socket_fd<span style="font-size:small">(File_Descriptor)</span></h3>
+      <p>
+        :socket()이 반환하는 정수값으로, 각 socket을 구분하는 id로 사용되며 socket 생성시 OS에서 순차적으로 부여하는 번호입니다.<br>
+        :삭제된 socket_fd는 새로운 socket_fd에서 재사용될 수 있습니다.
+      </p>
+      <h3>sub_socket_fd</h3>
+      <p>
+        :listen()까지는 server_socket_fd를 사용하여 연결 요청을 받고 
+        실제 통신은 요청마다 accept()에서 sub_socket_fd를 반환하여 새로운 소켓을 만들고 연결합니다.<br>
+        :sub_socket의 sockaddr 값에는 client의 주소정보가 들어갑니다.
+      </p>
+      <h3>sockaddr</h3>
+      <p>
+        -u_short sa_family: 해당 서버에서 사용중인 주소 체계 정보<br>
+        -char sa_data[14]: 십진수 형태의 ip와 port를 문자열에 저장<br>
+        <br>
+        [sockaddr_in<span style="font-size:small">(sockaddr의 확장)</span>]
+          <br>
+            -short sin_family: 해당 서버에서 사용중인 주소 체계 정보<br>
+            -u_short sin_port: 해당 서버의 특정 포트 정보<br>
+            -struct in_addr sin_addr: 해당 서버의 IPv4 주소(4bytes)<br>
+            -char sin_zero[]: 구조체 크기를 맞추기 위한 padding filed<br><span style="font-size:small">(대체로 16bytes를 맞추기 위해 8bytes를 차지합니다.)</span><br>
+      </p>
+      <h3>int socket(int family, int type, int protocol)</h3>
+      <p>&lt;int family&gt;<br>
+        :생성되는 소켓이 어떤 주소 체계를 사용할 것인지 설정합니다.<br>
+        [AF_INET]: IPv4 주소<br>
+        [AF_INET6]: IPv6 주소<br>
+        [AF_UNIX(AF_LOCAL)]: 내부 파일 경로 주소 체계<br>
+        [AF_PACKET]: IP를 사용하지 않고 패킷을 직접 다룹니다.<br>
+        <br>
+        &lt;int type&gt;<br>
+        :어떤 유형의 소켓을 생성할 것인지 설정합니다.<br>
+        [SOCK_STREAM]: TCP 소켓<br>
+        [SOCK_DGRAM]: UDP 소켓<br>
+        [SOCK_RAW]: 3계층 소켓(IP,ICMP..)<br>
+        <br>
+        &lt;int protocol&gt;<br>
+        :어떤 프로토콜을 사용할지 설정합니다.<br>
+        [0]: family와 type을 기반으로 소켓 라이브러리에서 자동 설정<br>
+        [IPPROTO_IP]<br>
+        [IPPROTO_ICMP]<br>
+        [IPPROTO_UDP]<br>
+        [IPPROTO_TCP]<br>
+        </p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+      <ul>
+        <li></li>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>sizeof(*addr) || length</h4>
+      구조체마다, 버퍼마다 크기가 다를 수 있으므로 함수 호출시 크기를 명시해주어야 합니다.</p>
+      <p><h4>통신 오류</h4>
+      -데이터가 안오는 경우: 버퍼 문제<br>
+      -데이터가 이상하게 오는 경우: 빅 엔디안, 리틀 엔디안 문제</p>
+    <p><h4>메모리 저장 방식</h4>
+    big endian<br>
+    :큰 부분부터 메모리에 저장(주로 통신에서 사용)<br>
+    little endian<br>
+    :작은 부분부터 메모리에 저장(주로 PC 연산에서 사용)</p>
+    <p><h4>write() || read()</h4>
+    :recv/send에는 flags 매개변수가 있어 더욱 전문적이고 강력하게 소켓 송수신을 할 수 있습니다.<br>
+    :하지만 오로지 소켓을 위한 함수이므로 다룬 입출력 장치에서의 범용성을 생각하면 read/write를 사용할 수도 있습니다.</p>
+  </aside>
+
+</body>
+</html>

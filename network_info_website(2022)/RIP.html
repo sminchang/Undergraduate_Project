@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>RIP<span style="font-size:small;">(Routing Information Protocol)</span></h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>개요</h3>
+      <p>Classful: <mark>서브넷팅이 불가</mark>합니다. 때문에 ip 주소의 활용이 제한적입니다.(rip v2부터는 가능)</p>
+      <p>불필요한 트래픽 발생: 주기적인 R/T 업데이트 패킷 때문에 <mark>링크의 대역폭이 증가</mark>합니다.</p>
+      <p>라우팅 성능의 한계: <mark>hop count만 고려</mark>할 뿐 어느 회선이 더 빠른지는 비교하지 못하기 때문에 최선의 경로 설정에 한계가 있습니다.</p>
+      <p><mark>무한 루프</mark>의 위험: 상호 의존적인 관계에서 긴 수렴시간 때문에 발생할 수 있는 looping의 위험이 있습니다.</p>
+      <p><mark>네트워크 크기 제약</mark>: Maximum hop count(15)를 사용하기 때문에 네트워크 크기에 제한이 걸립니다.</p>
+      <P><mark>소규모 네트워크</mark>의 경우 looping에 유의하면 간단하게 구성하고 메모리를 절약하는 효과를 낼 수 있습니다.</P>
+      
+      <h3>Routing Command</h3>
+      <p><span style="color:#226b80;">-  (config)#router rip<br>
+        -  (config-router)#network (Directly Connected)Network-Address]</span></p>
+        
+      <h3>Distance Vector 알고리즘</h3>
+      <p>각 라우터는 자신에게 연결된 인접 노드에 대한 정보만 계산하고 저장합니다.
+        그리고 주기적으로(RIP default 30s) 라우팅 프로토콜을 공유하는 라우터들 간에 R/T를 동기화시킵니다.
+        같은 목적지를 가진 다수의 경로가 존재할 경우 hop count가 가장 적은 경로를 R/T에 저장합니다.
+        결과적으로 어떤 라우터도 전체 topology에 대한 완전한 정보를 갖고 있지 않으며 경로 선정에 있어 인접한 라우터들과의 R/T 동기화에 의존합니다. </p>
+
+      <h3>Long Convergence Time</h3>
+      <p>Distance Vector 알고리즘의 특성상 라우터간 상호 의존적인 관계에서 발생하는 문제입니다.<br>
+      라우터A에서 다운된 링크가 발생했을 때, 라우터B에게 이를 알리려면 업데이트 주기를 기다려야합니다.
+      그 사이에 라우터B는 다운된 링크가 다운된 줄 모릅니다. 그래서 업데이트 전에 다운된 링크로 향하는 패킷이 들어오면 라우터A에게 다운된 링크를 자신이 사용할 수 있다고 알립니다.
+      그러면 라우터A는 라우터B를 통하면 해당 링크를 사용할 수 있는 줄 알고 해당 링크를 hop count만 늘려서 사용하려고 합니다.
+      그리고 이 문제가 반복되어 해당 링크는 hop count만 계속 늘어나는 무한 루프에 빠지게 됩니다.</p>
+      <h3>looping 방지</h3>
+      <p>Maximum hop count(15)<br>
+        hop에 최대치를 두고 이를 넘어가면 해당 라우팅 경로를 폐기합니다.</p>
+      <p>Hold Down Timer<br>
+      다운된 링크 정보를 가진 라우터는 hold down timer를 시작합니다.
+      해당 시간동안 다운된 링크로 향하는 패킷이 들어오면 자신의 R/T가 가진 hop과 비교하여, 크면 무조건 해당 패킷을 무시합니다. hold down timer가 종료되거나 자신과 비교한 hop이 같거나 더 작으면 해당 정보로 R/T를 업데이트합니다.</p>
+      <p>Split Horizon<br>
+      라우팅 정보를 받은 쪽으로 다시 같은 라우팅 정보를 보내지 못하도록 하는 기술로, 두 라우터간에 설정해줍니다. 인접한 라우터끼리 각각 설정해주어야하기 때문에 전체 네트워크에서 루핑 방지를 위해 사용하기는 어렵습니다.</p>
+      <p>Route Poisoning<br>
+      링크가 다운되면 hop을 16으로 지정해서 즉시 해당 라우팅 경로를 폐기합니다. 이러면 인접 라우터로부터 해당 링크에 대한 어떤 패킷이 와도 폐기된 경로로 대응하는 방식입니다.</p>
+      <p>Poison Reverse<br>
+      split horizon을 응용하는 방식으로, 네트워크 정보를 받은 곳으로 되돌려주되, hop 16으로 설정하여 전달합니다. 즉 보내는 측에서 경로를 바로 폐기하지 않고 받는 측에서 다시 한 번 확인하고 폐기하게끔 합니다.</p>
+      </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>IRP<span style="font-size:small"> (=IGP)</span></p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="RIP.html">RIP</a></li>
+        <li><a style="color:#F0EAD6;" href="OSPF.html">OSPF</a></li>
+      </ul>
+      <br><p>ERP</p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="BGP.html">BGP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>load balancing</h4>
+    같은 hop count를 가지는 여러 경로가 존재할 때 해당 경로들로 패킷을 분산시켜서 전송하는 기술을 말합니다. 시스코 장비의 RIP의 경우 최대6개의 경로에서 가능합니다.</p>
+    <p><h4>IGRP<span style="font-size:x-small">(Interface Gateway Routing Protocol)</span></h4>
+    RIP의 단점을 보완하기 위해 나온 시스코 전용 라우팅 프로토콜입니다. 최대 hop 255를 사용하며 hop,bandwidth,reliability,load,MTU를 경로 설정에 사용합니다. 잘 쓰이지 않습니다.</p>
+  </aside>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>ARP<span style="font-size:small;">(Address Resolution Protocol)</span></h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>개요</h3>
+      <p>프레임을 형성할 때는 Destination MAC address가 필요합니다. 그래서 (목적지) MAC 주소를 모를 때 (목적지) IP 주소를 통해 (목적지) MAC 주소를 알아낼 때 사용하는 프로토콜입니다.<br><br>
+      *다른 네트워크(WAN)와 통신할 때 IP는 상대방의 IP를 그대로 사용하지만, MAC은 상대방도 Gateway 라우터의 MAC을 사용합니다. 즉 자신의 LAN을 넘어가는 ARP 요청에서는 상대쪽 Gateway의 MAC이 응답합니다.<br>
+      *remote lan segment와 통신할 경우, 즉 원격 접속 PC가 목적지라면 MAC 주소를 찾을 수 없습니다. 그래서 이런 경우 Destination IP의 Gateway 라우터 MAC을 사용합니다.</p>
+      <h3>설명</h3>
+      <p>자신의 IP와 상대방의 IP주소를 담아서  MAC Broadcast(FF:FF:FF:FF:FF:FF)로 LAN 전체에 요청(ARP Request 패킷 전송)을 보내면 해당 IP의 상대방이 자신의 MAC주소와 함께 응답(ARP Reply 패킷 전송)을 보냅니다.</p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>IP 기반 프로토콜</p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="ICMP.html">ICMP</a></li>
+        <li><a style="color:#F0EAD6;" href="ARP.html">ARP</a></li>
+        <li><a style="color:#F0EAD6;" href="IGMP.html">IGMP</a></li>
+      </ul>
+      <p>IP address</p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="IPv6.html">IPv6</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>*RARP<span style="font-size:small;">
+    (Reverse ARP)</span></h4>
+    :(자신의) IP 주소를 모를 때(IP는 관리자가 부여하기 때문) (자신의) MAC 주소를 통해 서버에서 (자신의) IP 주소를 알아내는 서비스입니다.</p>
+    <p><h4>GARP<span style="font-size:small;">
+    (Gratutious ARP)</span></h4>
+    :LAN 전체에 자신의 IP와 MAC을 Broadcast로 보내어 ARP Cache를 갱신하도록 알려주는 서비스입니다.</p>
+  </aside>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Digital Network</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 부제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>네트워크란?</h3>
+      <p>정의: 정보를 나눌 수 있는 환경</p>
+      <p>구성: <b>노드 + 데이터 + 매체 + 프로토콜 </b></p>
+
+      <h3>노드(Node)</h3>
+      <p>데이터를 생산하고 소비하는 기초 단위입니다.<br>
+        (end device, PC, server ...)</p>
+
+      <h3>데이터(Data)</h3>
+      <p>1.디지털 데이터(이진 신호(on&off))<br>
+        2.아날로그 데이터(주파수(연속된 파형))</p>
+      <p>PDU(Protocol Data Unit)<br>
+        계층마다, 프로토콜마다 정보를 묶는 단위에 차이가 있습니다.
+        이러한 단위의 형태를 PDU라고 합니다.</p>
+
+      <h3>매체(Medium)</h3>
+      <p>주요 단위: 대역폭(bandwidth)<br>
+        대역폭이 클수록 전송 능력(양,속도)이 향상되며<br>
+        bps(bit per second)를 기본 단위로 합니다.</p>
+      <p>매체 유형: 회선(유,무선) / 중개기<br>
+        케이블, 셀룰러... / 라우터, 스위치, 허브, 안테나...</p>
+
+      <h3>프로토콜(protocol)</h3>
+      <p>(영어)protocol = 규약(국어)</p>
+      <p>:충돌 방지, 우선 순위 결정 등 통신을 위한 약속 체계</p>
+
+      <!-- <p>캡슐화: </p> -->
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="Cisco CLI.html">Cisco CLI</a></li>
+        <li><a style="color:#F0EAD6;" href="Socket Programming.html">Socket Programming</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>*OSI 7계층</h4>
+    :국제표준화기구(ISO)에서<br>
+    네트워크의 구성을 이론적으로 모듈화</p>
+    <p><h4>*캡슐화</h4>
+      :자기 계층외의 데이터는 캡술화<br>
+      =자기 계층의 데이터(헤더파일)만 해석</p>
+    <p><h4>2진수의 변환</h4>
+    10진수: 8비트 단위로 번역<br>
+    ex): 00101100 = 44<br>
+    16진수: 4비트 단위로 번역<br>
+    ex): 0010 1100 = 2 C</p>
+  </aside>
+
+</body>
+</html>

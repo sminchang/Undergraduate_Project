@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>PPP<span style="font-size:small;">(Point to Point Protocol)</span></h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>개요</h3>
+      <p>ISP 회선에 접속하여 WAN에 참여하고자 할 때 전용선 방식이나 회선 스위칭 방식을 사용할 경우
+        라우터에서 해당 프로토콜을 설정합니다.
+        2계층 프레임의 encapsulation 방식을 규정하는 프로토콜이며 같은 계열의 이더넷, ATM, HDLC등에는 없는 보안 기능을 가지고 있습니다.<br>
+        3계층의 여러 프로토콜<span style="font-size:small;">(IP,IPX,Appletalk...)</span>을 통합하여 encapsulation할 수 있습니다.<br>
+        NCP<span style="font-size:small;">(Network Control Protocol)</span>로 멀티 프로토콜을 지원합니다.<br>
+        LCP<span style="font-size:small;">(Link Control Protocol)</span>로 보안 기능을 지원힙니다.<br>
+        데이터 링크 계층의 세션을 구축한 직후 보안인증 단계를 거쳐 네트워크 계층 세션을 구축하며, 
+        주로 CHAP(Challenge Handshake Authentication Protocol)로 보안인증을 합니다.</p>
+      <h3>LCP</h3>
+      <h3>CHAP</h3>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>WAN<br>Framing protocol</p>
+        <ul>
+          <li><a style="color:#F0EAD6;" href="PPP.html">PPP</a></li>
+          <li><a style="color:#F0EAD6;" href="Frame Relay.html">Frame Relay</a></li>
+        </ul>
+      <p>Wireless<br>Framing protocol</p>
+      <ul><li><a style="color:#F0EAD6;" href="IEEE 802.11.html">IEEE 802.11</a></li></ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>HDLC<span style="font-size:x-small;">(High-level Data Link Protocol)</span></h4>
+    :PPP와 마찬가지로 2계층 encapsulation에 사용되는 프로토콜입니다. 표준 버전에서 encapsulation을 지원하는 3계층 프로토콜이 ip밖에 없어 잘 쓰이지 않습니다.</p>
+    <p><h4>SLIP<span style="font-size:x-small;">(Serial Line Internet Protocol)</span></h4>
+    :PPP와 마찬가지로 2계층 encapsulation용 비표준 프로토콜입니다. 구조가 단순하지만 보안 기능이 없습니다. PPP 등장 이후 잘 쓰이지 않습니다.</p>
+    <p><h4>PAP<span style="font-size:x-small;">(Password Authentication Protocol)</span></h4>
+    :PPP에서 사용하는 간단한 보안인증 프로토콜입니다. host name과 P/W를 암호화없이 통신하여 인증하기 때문에 해킹에 취약해 잘 쓰이지 않습니다.</p>
+  </aside>
+
+</body>
+</html>

@@ -1,0 +1,282 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>IP (Internet Protocol)</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>패킷(데이터그램) 구조</h3>
+      <div style="position:absolute; top:9rem; left:-0.7rem; height:12.4rem; width:0.3rem; border:0.1rem solid; border-right:none;"></div>
+      <div style="position:absolute; top:14rem; left:-4.5rem; width:0.3rem; color:blue;">Header</div>
+      <table border=1>
+        <tr>
+          <td>VER<br>(4bits)</td>
+          <td>HLEN(4bits)</td>
+          <td colspan='2'>DS(1)</td>
+          <td colspan='4'> Total Length(2)</td>
+        </tr>
+
+        <tr>
+          <td colspan='4'>Identification(2)</td>
+          <td>Flags(3bits)</td>
+          <td clospan='3'>Fragmentation Offset(13bits)</td>
+        </tr>
+
+        <tr>
+          <td colspan='2'>Time To Live(1)</td>
+          <td colspan='2'>Protocol(1)</td>
+          <td colspan='4'>Header Checksum(2)</td>
+        </tr>
+
+        <tr>
+          <td colspan='8'>Source IP Address(4)</td>
+        </tr>
+        <tr>
+          <td colspan='8'>Destination IP Address(4)</td>
+        </tr>
+        <tr>
+          <td colspan='8'>Options & Padding(0~40)</td>
+        </tr>
+        <tr>
+          <td colspan='8', style="border:none;">+</td>
+        </tr>
+        <tr>
+          <td colspan='8'style="color:blue;">Data(~65536)</td>
+        </tr>
+      </table>
+      <p>VER(VERsion): IP의 버전을 나타내기 위한 영역(field)입니다.</p>
+      <p>HLEN(Header LENgth): OPtions & Padding영역으로 인해 유동적으로 변하는 헤더의 길이를 나타내는 영역입니다.</p>
+      <p>DS(Differentiated Service): 전송할 데이터의 우선권을 설정하기 위한 영역입니다.</p>
+      <p>Total Length: IP 패킷의 전체 길이를 나타내는 영역입니다.(상위 계층 데이터=전체 길이-헤더 길이)</p>
+      <br><p>Identification: 각각의 패킷을 구분하기 위한 식별자를 나타내는 영역입니다.
+        (패킷이 단편화되었을 때 단편화된 패킷들이 원본을 식별하여 재결합할 수 있도록 합니다.)</p>
+      <p>Flags: 패킷이 단편화될 수 있는지, 단편화되었을 때 뒤에 다른 단편화 패킷이 더 있는지에 대한 여부를 나타내는 영역입니다.</p>
+      <p>Fragmentation offset: 단편화된 패킷들을 하나의 패킷으로 합칠 때 원본에서 자신의 위치(순번)를 나타내는 영역입니다.</p>
+      <br><p>Time To Live(TTL):패킷이 네트워크 안에서 얼마나 오랫동안 존재할지를 설정하기 위한 영역입니다.
+        (패킷이 라우터를 지날 때마다 그 값이 1씩 감소하여 0이 되면 해당 패킷을 폐기합니다.)</p>
+      <p>Protocol: 패킷이 담고 있는 Data가 어떤 상위 계층 프로토콜의 데이터인지 나타내는 영역입니다.</p>
+      <p>Header Checksum: 오류를 검사하기 위한 체크섬(일정 방식으로 헤더의 데이터를 더한 값)을 저장하는 영역입니다.
+        (송신자가 패킷의 체크섬을 함께 보내면 수신자는 송신자의 체크섬과 자신이 받은 체크섬을 비교하여 오류를 검사합니다.)<p>
+      <br><p>Destination IP address: 수신지 IP 주소를 나타내는 영역입니다.</p>
+      <p>Source IP address: 송신지 IP 주소를 나타내는 영역입니다.</p>
+      <br><p>Options: 전문가가 네트워크 구성, 라우팅 제어 등을 할 수 있도록 디자인된 영역입니다.</p>
+
+      <h3>IPv4 Address -Class</h3>
+      <div style="position:absolute; top:96rem; left:-0.5rem; height:7rem; width:0.3rem; border:0.15rem solid; border-right:none;"></div>
+        <div style="position:absolute; top:98.5rem; left:-4rem; height:3rem; width:0.3rem; color:blue;">Unicast</div>
+      <table style="width:30rem;">
+        <th>유형</th>
+        <th>8bits</th>
+        <th>8bits</th>
+        <th>8bits</th>
+        <th>8bits</th>
+        <tr>
+          <td>class A: (0~)<br>
+          <span style="font-size:small;">'0'이 첫 번째 비트 (0-------)</span></td>
+          <td>Network</td>
+          <td>Host</td>
+          <td>Host</td>
+          <td>Host</td>
+        </tr>
+        <tr>
+          <td>class B: (128~)<br>
+          <span style="font-size:small;">'0'이 두 번째 비트 (10------)</span></td>
+          <td>Network</td>
+          <td>Network</td>
+          <td>Host</td>
+          <td>Host</td>
+        </tr>
+        <tr>
+          <td>class C: (192~)<br>
+          <span style="font-size:small;">'0'이 세 번째 비트 (110-----)</span></td>
+          <td>Network</td>
+          <td>Network</td>
+          <td>Network</td>
+          <td>Host</td>
+        </tr>
+        <tr>
+        <td>class D: (224~)<br>
+        <span style="font-size:small;">'0'이 네 번째 비트 (1110----)</span></td>
+        <td colspan=4 style="color:blue;">Multicast</td>
+        </tr>
+        <tr>
+        <td>class E: (240~)<br>
+        <span style="font-size:small;">네 번째 비트까지 '1' (1111----)</span></td>
+        <td colspan=4>Research</td>
+        </tr>
+      </table>
+      <p>→IP 주소의 구성 = 네트워크 영역 + 사용자 영역<br>
+        →IP 주소의 클래스 = 네트워크 영역 + 사용자 영역의 비율</p>
+      <br><p>예약 주소
+      <ol>
+        <li>Network address: Host 영역이 모두 '0'(...00000000)</li>
+        <li><span style="color:blue;">Broadcast</span> address: Host 영역이 모두 '255'(...11111111)</li>
+      </ol>
+      →예약 주소를 제외하여 호스트 수를 계산할 때는 -2를 해준다.<br>
+      →N/w 주소: LAN의 처음 / Br 주소: LAN의 끝</p>
+    <h3>IPv4 Address -Subnet</h3>
+    <p><b>Subnet:</b> 기본 class가 제공하는 Host 영역의 일부를
+       Network 영역에 추가로 할당합니다. 하나의 공인 주소를 여럿의 브로드캐스트 도메인으로 나누어 사용하고자 할 때 사용합니다.</p>
+    <p><b>Subnet Mask:</b> Subnet으로 인해 class만으로는 N/w 주소를 알 수 없어
+      IP주소에서 N/w 주소를 추출해내기 위한 가리개입니다. AND 연산을 사용하며 1은 연속된 값으로만 표현가능합니다.</p>
+    <p>AND 연산:  &nbsp; 0&0=0, &nbsp; 0&1=0, &nbsp; 1&0=0,<span style="color:red;">&nbsp; 1&1=1</span><br>
+    →IP의 네트워크 영역은 SubnetMask에서 '1'로 표현<br>
+    →IP의 사용자 영역은 SubnetMask에서 '0'으로 표현<br>
+    →IP에서 네트워크 영역만 추출</p>
+    <p>예시:)<br>
+      IP: 173.86.97.80/22<br>
+      -- 173=10101101 → B class 네트워크 영역:16 bits<br>
+      -- /22(네트워크 영역의 총 bits) → 22 - 16 = <mark>6(Subnet)</mark><br>
+    IP: 173.86.01100001.80 = 173.86.97.80<br>
+    SubnetMask: 255.255.<mark>111111</mark>00.0 = 255.255.252.0<br>
+    N/w: 173.86.<mark>011000</mark>00.0 = 173.86.96.0<br>
+    Br: 173.86.<mark>011000</mark>11.255 = 173.86.99.255<br>
+    LAN Host: 173.86.96.1 ~ 173.86.99.254</p>
+    <h3>IP address allocation</h3>
+    <p>정적할당<br>
+    :노드에서 직접 자신의 고정 ip를 설정합니다.</p>
+    <p>동적할당<br>
+    :라우터에서 DHCP 설정을 통해 동적으로 노드들에게 ip를 할당합니다.</p>
+    </article>
+  </section>
+  <nav>
+    <div id="detail_list">
+      <p>IP 기반 프로토콜</p>
+        <ul>
+          <li><a style="color:#F0EAD6;" href="ICMP.html">ICMP</a></li>
+          <li><a style="color:#F0EAD6;" href="ARP.html">ARP</a></li>
+          <li><a style="color:#F0EAD6;" href="IGMP.html">IGMP</a></li>
+        </ul>
+        <p>IP address</p>
+        <ul>
+          <li><a style="color:#F0EAD6;" href="IPv6.html">IPv6</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>*IP의 버전</h4>
+    IPv4:10진수로 표현(주소고갈)(4byte)<br>
+    IPv6:16진수로 표현(ipv4 대체)(16byte)</p>
+    <p><h4>*패킷의 단편화(Fragmentation)</h4>
+    :IP 패킷은 네트워크를 지나기 때문에 경우에 따라 더 작은 크기로 나뉘어야할 수도 있습니다.
+    따라서 다양한 경우 대비해 패킷의 분할과 관련된 필드는 3개로 나뉘어져 있습니다.</p>
+     <p><h4>*Offset</h4>
+     :두 번째 주소를 만들기 위해 기준이 되는 주소에 더하는 값</p>
+     <p><h4>*용어 정리</h4>
+       Unicast-단일 기기에 데이터 전송<br>
+       Multicast-일부 기기에 데이터 전송<br>
+       Broadcast-모든 기기에 데이터 전송</p>
+      <p><h4>*용어 정리</h4>
+        LAN(Local Area Network)<br>
+      :같은 브로드캐스트 주소를 갖는 네트워크 범위<br>
+      WAN(Wide Area Network)<br>
+      :복수의 LAN을 연결한 네트워크<br>
+      WLAN(Wireless LAN)<br>
+      :무선 LAN 환경</p>
+        <p><h4>*Loopback address</h4>
+      :127.0.0.1 ~ 127.255.255.254<br>
+      (테스트를 위한 가상 인터페이스 전용 주소)</p>
+      <p><h4>private address</h4>
+        :10.0.0.0 ~ 10.255.255.255<br>
+        :172.16.0.0 ~ 172.31.255.255<br>
+        :192.168.0.0 ~ 192.168.255.255</p>
+      <p><h4>중개 장치의 ip</h4>
+      라우터의 경우 인터페이스마다 ip를 할당하지만 스위치나 허브는 장비 한 대당 하나의 ip를 할당받으며
+      이 또한 안받아도 통신은 가능합니다. 다만 라우터와의 자원 공유등 네트워크 환경 관리를 위해 ip를 할당받습니다.</p>
+
+  </aside>
+
+</body>
+</html>
+
+

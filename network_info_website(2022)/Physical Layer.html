@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Physical Layer</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>정보의 단위: bits</h3>
+      <h3>전반적인 역할</h3>
+      <p>
+        <ol>
+          <li>회선 설치<br>
+            :디지털 신호를 전달할 물리적 전송로를 구축합니다.</li>
+          <li>신호 확장<br>
+            :이동 거리가 길어질수록 손실이 생기는 디지털 신호를 증폭시켜 초기 상태를 유지시킵니다.<br>
+            :여러 장비들을 하나의 네트워크 안에 이어주는 멀티 포트의 역할을 수행합니다.</li>
+          <li>데이터 전송 방식 결정<br>
+          :직류 전송, 교류 전송 등으로 아날로그 형식과 디지털 형식의 전송 방식을 정합니다.</li>
+        </ol>
+      </p>
+
+      <h3>직류와 교류</h3>
+      <p>교류(Alternate Current)<br>
+        전압의 극성이 지속적으로 바뀌며 아날로그(50 or 60Hz) 형태를 띕니다. 전력을 생산하고 공급하는 용도로 사용됩니다.
+        <span style="font-size:small;">(전압이 높을수록 전류 손실량이 줄어드는데 교류는 송전중 낮아지는 전압을 올려주기 쉬워 장거리 전력공급에 사용됩니다.)</span><br>
+        -Broadband: 직류 신호(디지털)를 전송할 때 교류 신호(아날로그)로 변환하여 전송합니다.</p>
+      <p>직류(Direct Current)<br>
+        전압이 일정하기 때문에 디지털(on&off) 표현과 전자제품의 전원 공급에 사용됩니다.<br>
+        <span style="font-size:small;">(교류로 공급받은 전력을 직류로 변환하는 정류 회로가 대부분의 전자제품 내장되어 있습니다.)(네트워크에서 대부분의 데이터가 이 방식으로 전송됩니다.)</span><br>
+        -Baseband: 직류 신호(디지털)를 전송할 때 교류 신호(아날로그)로 변환하지 않고 그대로 전송합니다.</p>
+        <h3>회선 구축 방식</h3>
+      <p>직렬 전송(Serial communication): 데이터를 하나의 회선에 분해하여 전송(1비트씩 전송), 구현 쉽고 비용이 쌉니다. (RS-232C)</p>
+      <p>병렬 전송: 데이터를 다수의 회선에 분해하여 전송(1비트씩 8개의 회선에서 동시 전송 등),
+        회선을 많이 사용해서 구현이 어렵고 비용이 비싸지만 속도가 빠릅니다. (가령 드라이브 통신시 사용)</p>
+        <h3>회선 연결 방식<span style="font-size:small;">Network Topology</span></h3>
+        <p><img src="Topology Type.png" alt="" width="450"></p>
+          <p>Mesh형: 모든 노드가 서로를 연결합니다.<br>
+          :구현 비용과 난이도가 높지만 보안이 우수합니다.</p>
+          <p>Star(hub and spoke)형: 각 노드들은 중앙의 중개기에 연결됩니다.<br>
+          :구현이 쉽지만 중앙의 중개기에 문제가 생기면 전체가 마비되고 중개기를 거치지 않고는 통신할 수 없습니다.</p>
+          <p>Tree형: 백본에 여럿의 Star 구조가 Bus로 연결된 계층구조입니다.<br>
+          :구현이 어렵지만 트래픽 처리 능력이 우수합니다.</p>
+          <p>Bus형:하나의 회선에 여러 노드를 연결합니다.<br>
+          :구현 및 재구성이 쉽습니다. 확장될수록 성능이 저하되며 특정 부분에 문제가 생기면 전체에 영향을 미칩니다.</p>
+          <p>Ring형: 인접한 노드끼리 연결하여 원형 구조를 이룹니다.<br>
+          :구현 및 재구성이 쉽습니다. 특정 부분에 문제가 생기면 전체에 영향을 미칩니다.</p>
+          <p>Hybrid형: 기본 topology를 변형하거나 조합하여 사용하는 경우입니다.</p>
+      </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>Repeater(리피터)</h4>
+    :케이블의 물리적 한계를 보완하기 위한 장비로,
+    수신된 신호를 증폭시켜 재전송하는 역할을 합니다.
+    하지만 케이블의 발전으로 거의 쓰이지 않는 장비입니다.</p>
+    <p><h4>Hub(허브)</h4>
+    :신호의 확장(Repeater)과 3대 이상의 PC를 연결하는 기능을 제공합니다.
+    이더넷의 CSMA/CD 방식에서 충돌 도메인을 분리하는 기능없이 그대로 사용하기 때문에
+    네트워크가 확장될수록 충돌 시 전송 대기 상태가 늘어납니다. 장점으로는 스위치보다 값이
+    싸다는 것이었으나 스위치의 가격이 계속 내려가고 있어 사용빈도가 낮아지고 있습니다.</p>
+    <p><h4>전류 변환</h4>
+      -diode: 교류 전압에서 극성의 한쪽 방향을 차단해서 전자들이 +극성의 전압만을 띄게 만듭니다.<br>
+      -transistor: 다이오드(정류작용)+증폭작용<br>
+      -modem,inverter: 직류를 교류로 변환하는 장치<br>
+      -converter: 교류를 직류로 변환하는 장치</p>
+    <p><h4>DSU/CSU</h4>
+    DSU(Digital Service Unit):교류(디지털) 데이터를 교류(디지털) 신호로 전송하는 디지털용 회선 장비입니다.<br>
+    CSU(Channel Service Unit):하나의 채널은 64kbps의 전송속도를 가집니다. 이러한 채널을 여러 개 묶어서 하나의 trunk line으로 활용해서 512k등의 고속 전송을 가능케하는 장비입니다. </p>
+    <p><h4>회선 구축 방식</h4>
+      Simplex (송신 혹은 수신만 가능) (TV)<br>
+      Half Duplex (송수신 모두 가능, 동시 전송 불가) (무전기)<br>
+      Full Duplex (동시 송수신 가능)</p>
+    <p><h4>회선 구축 요소</h4>
+      Rx = Recieve (수신)<br>
+      Tx = Transmit (송신)<br>
+      GND = GrouND (접지)<br>
+      Power (전원)</p>
+    </aside>
+
+</body>
+</html>

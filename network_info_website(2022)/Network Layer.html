@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Network Layer</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>PDU: Packet (or) Datagram</h3>
+      <h3>전반적인 역할</h3>
+      <p>
+        <ol>
+        <li>IP(논리) 주소 부여<br>
+        :라우터의 각 포트(인터페이스)마다 부여하여<br>
+        각각의 LAN을 식별할 수 있게 하는 주소체계입니다.</li>
+        <li>브로드캐스트 도메인 분리<br>
+        ip의 네트워크 영역을 설정하여 브로드캐스트 도메인을 분리합니다.</li>
+        <li>라우팅<br>
+        :분리된 브로드캐스트 도메인을 필요에 따라 연결합니다.<br>
+        :네트워크가 커질수록 다양한 이동 경로가 생기는 것에 대해 최적의 이동 경로를 탐색합니다.</li>
+      </ol>
+      </p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+      <p><h4>internet</h4>
+        IANA<span style="font-size:x-small">(Internet Assigned Names Authority)</span>에서 전세계적으로 사용되고 있는 공용 IP를 관리하고 있으며
+        ISP<span style="font-size:x-small">(Internet Service Provider)(SKT,KT,LGU+..)</span>가 그 중 일부를 대여받아 전세계 통신망에 참여합니다.
+        ISP 회사에 따라 지역마다 구축된 통신망에 대여한 공인ip를 분배합니다.
+        일반 사용자는 이 중 하나에 연결되지만 직접 연결되는 것이 아니라<span style="font-size:x-small">(IPv4고갈로)</span> 하나의 공인ip에 NAT로 수백~수천의 사설ip가 연결되어 인터넷에 참여하게 합니다.</p>
+        <p><h4>intranet & extranet</h4>
+        intranet: 인터넷과 통신이 불가하도록 의도된 내부망을 가르킵니다.<br>
+        extranet: intranet에 접근성을 높여 내부 관계자외 고객들도 망에 접속할 수 있도록 구축한 내부망입니다.</p>    
+      <p><h4>*개념 정리</h4>
+      논리적: 소프트웨어상에서<br>
+      물리적: 하드웨어상에서</p>
+      <p><h4>*패킷</h4>
+      :3계층 정보 단위이기도 하지만,
+      각 계층에서 주고 받는 정보의 단위를 총칭하여 쓰이기도 함</p>
+  </aside>
+
+</body>
+</html>

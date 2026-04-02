@@ -1,0 +1,216 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Ethernet</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+        <h3>프레임 구조</h3>
+      <table border style="width:33.2rem;">
+        <caption>Ehternet 2 Frame<span style="font-size:small">(대기업 표준화)</span></caption>
+        <tr>
+          <td>preamble<br>(8)</td>
+          <td>Destination MAC Address(6)</td>
+          <td>Sourse MAC Address(6)</td>
+          <td>Type(2)</td>
+          <td>Data(~1500)</td>
+          <td>FCS(4)</td>
+        </tr>
+        <tr style="font-size:small;">
+          <td>동기화</td>
+          <td>수신지 물리주소</td>
+          <td>송신지 물리주소</td>
+          <td>상위계층 구분 정보</td>
+          <td>캡슐화된 데이터</td>
+          <td>오류 감지</td>
+        </tr>
+      </table>
+      <br>
+        <table border>
+          <caption>IEEE 802.3 Frame<span style="font-size:small">(국제 협회 표준화)</span></caption>
+        <tr>
+          <td rowspan='2'>preamble<br>(7)</td>
+          <td rowspan='2'>SFD(1)</td>
+          <td rowspan='2'>Destination MAC Address(6)</td>
+          <td rowspan='2'>Sourse MAC Address(6)</td>
+          <td rowspan='2'>Length(2)</td>
+          <td colspan='2'>Data(~1500)</td>
+          <td rowspan='2'>FCS(4)</td>
+        </tr>
+        <tr>
+          <td>802.2 LLC(3)</td>
+          <td>Data</td>
+        </tr>
+        <tr style="font-size:small;">
+          <td colspan='2'>동기화 <span style="font-size:x-small">(Start Frame Delimiter)</span></td>
+          <td>수신지 물리주소</td>
+          <td>송신지 물리주소</td>
+          <td>type에 대응하는 길이</td>
+          <td>상위계층 구분 정보</td>
+          <td>캡슐화된 데이터</td>
+          <td>오류 감지</td>
+        </tr>
+      </table>
+
+      <h3>1. MAC - Adderss (물리주소)</h3>
+      <p>MAC (Media Access Control)<p>
+      <table border>
+        <caption>MAC Address</caption>
+        <tr>
+          <td>Organization Unique ID</td>
+          <td>Interface Serial Number</td>
+        </tr>
+        <tr>
+          <td>제조사 ID (24bits)</td>
+          <td>제품 일련 번호 (24bits)</td>
+        </tr>
+      </table>
+      <p><span style="font-size:small">(Source and Destination)</span>MAC address는 LAN에서는 각 노드를 정확히 가리키지만
+        WAN<span style="font-size:small">(another LAN)</span>으로 넘어갈 경우 Gateway Router의 MAC address를 사용합니다.</p>
+      <h3>1-1. MAC - CSMA/CD Protocol</h3>
+      <p>CSMA/CD(Carrier Sense Multiple Access /Collision Detection)</p>
+      <p>1.현재 자신의 네트워크 위에 데이터가 흐르고 있는지 감지합니다.<br>
+      2.데이터가 흐른다면(전송 중이라면) 기다리고, 아니라면 전송을 시작합니다.<br><br>
+      2-1.여러 곳에서 동시에 전송을 시작하는 등, 충돌이 발생한다면?(/Collision Detection)<br>
+      →충돌을 가장 먼저 감지한 노드에서 충돌 신호를 흡수합니다.<br>
+      →자신의 네트워크 상에 있는 모든 노드에게 Jaming Signal을 보내 충돌을 알립니다.<br>
+      →모든 노드는 각기 다른 '무작위 시간'동안 전송을 중단한 후 전송을 시작합니다.<br>
+      <span style="font-size:small;">*그럼에도 충돌이 반복적으로(15회 이상) 발생할 경우, 전송을 포기합니다.<br><br></span>
+      3.전송을 마치면 상위 계층에 전송이 끝났음을 알리고 마치게 됩니다.</p>
+      <h3>2. LLC(상위 계층 구분)</h3>
+      <p>
+      <table border>
+        <caption>LLC(Logical Link Control)</caption>
+      <tr>
+        <td>DSAP(1)</td>
+        <td>SSAP(1)</td>
+        <td>Control(1)</td>
+      </tr>
+      <tr>
+        <td>목적지 주소</td>
+        <td>송신지 주소</td>
+        <td>상위계층 통신방식</td>
+      </tr></table>
+      <br>
+      SAP(Service Access Point): TCP/IP에서 사용하는 port와 비슷한 개념입니다.
+      상위 계층과 사용할 프로토콜 정보를 기입합니다.<br>
+      LLC control: 주로 Type1을 사용합니다.<br> Type1(비연결형) / Type2(연결지향형): / Type3(비연결 확인형)</p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>WAN<br>Framing protocol</p>
+        <ul>
+          <li><a style="color:#F0EAD6;" href="PPP.html">PPP</a></li>
+          <li><a style="color:#F0EAD6;" href="Frame Relay.html">Frame Relay</a></li>
+        </ul>
+        <p>Wireless<br>Framing protocol</p>
+      <ul><li><a style="color:#F0EAD6;" href="IEEE 802.11.html">IEEE 802.11</a></li></ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>*CSMA/CA(Collision Avoidance)</h4>
+    :충돌을 감지하는 것(CSMA/CD)이 아니라
+    충돌을 회피한다. 현재 주파수의 간섭이 있는지 확인하고 또 기다렸다가 한 번 더 확인하고 전송한다. 이후에 ACK 신호를 기다리고 응답이 없으면 다시 전송한다.<br>(무선 네트워크에서 사용)</p>
+    <p><h4>*Jaming Signal</h4>
+      :(전송)'방해 신호'로 번역</p>
+    <p><h4>1-2. MAC- Token Ring</h4>
+    네트워크의 물리적 구조는 다양하게 구축될 수 있습니다.
+    가장 많이 쓰이는 방식이 CSMA/CD이지만
+    토큰을 가진 PC만 전송하고 다 쓰면 옆PC에 토큰을 넘겨주는 토큰링 방식도 있습니다.<br>
+    이외에 ATM 방식, FDDI 방식 등도 있습니다.</p>
+  </aside>
+
+</body>
+</html>

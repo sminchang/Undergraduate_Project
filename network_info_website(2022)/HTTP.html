@@ -1,0 +1,315 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>HTTP<span style="font-size:small">(HyperText Transfer Protocol) (port:80)</span></h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>소개</h3>
+      <p>1989년 Tim Berners-Lee가 전세계가 연결된 통신망이라는 WWW(world Wide Web)의 개념을 고안하며
+        이를 위해 만든 프로토콜입니다.</p>
+      <p>이진수가 아닌 아스키 코드를 기본 전송단위로 하여 프로토콜 포맷(규격)에서 비트 길이가 아닌 공백 문자, 개행 문자 등으로 메시지 단위를 구분합니다.</p>
+      <p>기본적으로 TCP 연결 방식을 사용하지만 전송이 끝나면 연결을 유지하지 않는 비연결 방식을 사용합니다.</p>
+      <h3>HTTP Version</h3>
+      <p>[http/1.0]: 요청마다 새로운 TCP 연결
+      <br>[http/1.1]: 같은 호소트에 대한 여러 요청은 한 번의 TCP 연결을 통해 처리
+      <br>[http/2]: https
+      <br>[http/3]: 구글에서 개발한 QUIC(Quick UDP Internet Connections) 프로토콜로 연결<br>
+       -사용자 IP가 바뀌어도 연결을 유지<br>
+       -Zero RTT(Round Trip Time): 최초 접속에서만 핸드쉐이크로 연결하고 이후에는 이전 통신기록을 토대로 연결하여 연결 설정 시간을 없습니다.<br>
+       -TLS 보안<br>
+       -패킷 손실에 대한 빠른 대응</p>
+      
+      <h3>request message format</h3>
+      <table border=1>
+        <tr>
+          <td>method type</td>
+          <td>Sp</td>
+          <td>Request-URL</td>
+          <td>Sp</td>
+          <td>http version</td>
+          <td>CRLF</td>
+        </tr>
+
+        <tr>
+          <td>header filed</td>
+          <td>:</td>
+          <td>value</td>
+          <td>CRLF</td>
+        </tr>
+
+        <tr>
+          <td colspan='8', style="border:none;">...</td>
+        </tr>
+
+        <tr>
+          <td>CRLF</td>
+        </tr>
+
+        <tr>
+          <td colspan='8', style="border:none;">+</td>
+        </tr>
+        <tr>
+          <td>body</td>
+        </tr>
+      </table>
+      <p>[method type]<br>
+      -GET: (URL로) 리소스 조회<br>
+      -POST: (body로) 처리할 데이터 전송<br>
+      -PUT: (body로) 리소스 대체, 없으면 생성<br>
+      -PATCH: (body로) 리소스 부분 변경<br>
+      -DELETE: (URL로) 리소스 삭제<br>
+      -HEAD: (GET 요청 방식으로) body 생략하고 header만 조회<br>
+      -TRACE: 클라이언트가 자신의 request message를 반환받아 확인하고자 할 때<br>
+      -CONNECT: 특정 프록시 서버에 연결 요청<br>
+      -OPTIONS: 해당 URL에서 지원하는 요청 메세지 목록 요청
+      </p>
+
+      <p>URL(Uniform Resource Locator)]<br>
+      [표기 형식]: Scheme://Host(:Port)/Path?Query<br>
+      -Scheme: 프로토콜 표기(주로 HTTP, HTTPS)<br>
+      -Host: ip address 또는 DNS address (port는 Well-known port의 경우 대체로 생략)<br>
+      -Path: 접근할 서버의 리소스 경로(위치)<br>
+      --PathVariable: Path의 일부를 변수로 지정하여 경로를 동적으로 구성할 때 사용합니다.<br>
+      -Query: body가 아닌 URL에 데이터를 담아 전송하는 경우(GET method로 데이터 전송하는 경우)에 사용합니다.
+      </p>
+
+      <p>[header field]<br>
+      -Host: 호스트명 및 포트번호<br>
+      -Referer: 요청하는 URL 직전에 접근 중이던 URL 표기<br>
+      -User-Agent: 클라이언트의 OS, rendering-engine, web-browser 정보<br><br>
+      -Accept: 클라이언트가 선호하는 Content-Type<br>
+      -Accept-Encoding: 클라이언트가 선호하는 Content-Encoding<br>
+      -Accept-Language: 클라이언트가 선호하는 Content-Language<br><br>
+      -Cookie: 클라이언트명 및 서버가 식별을 위한 보내준 세션ID<br><br>
+      -Range: 범위 전송 시 구간 지정<br><br>
+      -Authorization: 로그인 인증 정보<br><br>
+      -If-Modified-Since: 서버에서 동일한 리소스에 대하여 날짜가 수정된 경우에만 body를 전송(아니면 304 응답)<br>
+      -If-Modified-Match: 서버에서 동일한 리소스에 대하여 ETag가 수정된 경우에만 body를 전송(아니면 304 응답)<br>     
+      ...
+      </p>
+      <h3>response message format</h3>
+      <table border=1>
+        <tr>
+          <td>http version</td>
+          <td>Sp</td>
+          <td>state code</td>
+          <td>Sp</td>
+          <td>reason phrase</td>
+          <td>CRLF/td>
+        </tr>
+
+        <tr>
+          <td>header field</td>
+          <td>:</td>
+          <td>value</td>
+          <td>CRLF</td>
+        </tr>
+
+        <tr>
+          <td colspan='8', style="border:none;">...</td>
+        </tr>
+
+        <tr>
+          <td>CRLF</td>
+        </tr>
+
+        <tr>
+          <td colspan='8', style="border:none;">+</td>
+        </tr>
+        <tr>
+          <td>body</td>
+        </tr>
+      </table>
+      <p>[state code]<br>
+      -1xx: 임시응답, 현재까지 요청이 처리되었으니 계속 진행하라는 의미(잘 사용하지 않습니다.)<br><br>
+      -2xx: 성공<br>
+      --200(OK): 모든 유형의 응답 성공<br>
+      --201(created): 새 리소스를 생성하는 응답 성공<br><br>
+      -3xx(redirection): 요청 URL에 대해 다른 URL로 (주로 GET으로)응답<br>
+      --301(movedPermanently): 요청 URL이 더 이상 유효하지 않아 redirection<br>
+      --302(found): 요청 URL이 유효하지만 현재 요청에서는 redirection<br>
+      --304(not modified): 요청된 리소스에 수정사항이 없어 브라우저에 저장된 캐시로 redirection<br><br>
+      -4xx: 클라이언트측 에러<br>
+      --401(unauthorized): 인증 불가(로그인 안됨)<br>
+      --403(forbidden): 인가 불가(접근권한 없음)<br>
+      --404(not found): 요청 리소스가 존재하지 않음(리소스를 감추고 싶을 때도 사용합니다.)<br><br>
+      -5xx: 서버측 에러<br>
+      --500(interval server error): 서버 내부 문제
+      </p>
+      <p>[header field]<br>
+      -server: origin 서버의 소프트웨어 정보<br>
+      -Date: 응답 시간<br><br>
+      -location: URL to redirect<br><br>
+      -content-Range: 범위 전송한 범위 표시<br><br>
+      -transfer-encoding: body 분할 전송 방식 지정(해당 헤더 설정 시 Content-length를 지정할 수 없습니다.)<br><br>
+      -WWW-Authenticate: (401 응답 시) 서버가 요구하는 인증 방식에 대한 정보<br><br>
+      -Set-Cookie: 서버가 클라이언트에 대하여 가지는 고유한 값 전송<br>
+      --name=value: 쿠키의 이름과 값(세션id를 여기에 담습니다.)<br>
+      --domain: 쿠키를 제공하는 서버 도메인 주소<br>
+      --path: domain의 상세 경로<br>
+      --expires/max-age: 쿠키 만료일/타이머 (생략시 브라우저 종료시 소멸)<br>
+      --secure: https에서만 쿠키가 전송되도록 설정<br>
+      --httpOnly: JS에서의 쿠키 접근 차단(일종의 보안설정)<br><br>
+      -last-modified: 캐시 데이터에 대하여 마지막 수정일 표기<br>
+      -ETag: 캐시 데이터에 대하여 변경사항 확인용 태크 표기<br>
+      ...
+      </p>
+      <h3>representation Header Field</h3>
+      <p>:request, response에서 모두 사용되는 body 메타 데이터 헤더<br><br>
+        -Content-Type: body 데이터 형식<br>
+        -Content-Encoding: body 압축 전송 방식<br>
+        -Content-Language: body 자연어 코드<br>
+        -Content-length: body 길이<br>
+        ...
+      </p>
+
+      <h3>General Header Field</h3>
+      <p>:request, response에서 모두 사용되는 헤더<br><br>
+      -cache-control<br>
+      --max-age: 캐시된 리소스의 유효기간<br>
+      --cache: origin 서버에 캐시된 리소스의 유효성 확인 요청<br>
+      --no-store: 캐시되면 안되는 리소스 명시<br>
+      --public: proxy 서버에 저장되는 공용 데이터<br>
+      --private: proxy 서버에 저장되면 안되는 개인 데이터</p>
+
+      <h3>HTTP body</h3>
+      <p>[request,response]<br>
+        -JSON: API 통신에서 가장 표준화된 데이터 포맷<br><br>
+      [request]<br>
+      -x-www-form-urlencoded: html form data 전송 방식, body로 전송되지만 query로 처리됩니다.<br><br>
+      [response]<br>
+      -webpage: html, cssm js 파일 등을 전송<br>
+      -binary data: streaming, mp3, mp4 등의 데이터 전송<br>
+      -text: String 데이터 전송</p>
+
+      <h3>HTTPS<span style="font-size:small">(HyperText Transfer Protocol Secure) (port:443)</span></h3>
+      <p>HTTP가 아스키 코드로 전송되어 더욱이 보안에 취약한 문제를 보완하기 위해 나온 HTTP의 보안 버전입니다. 암호화 관련 트래픽이 증가하고 인증서 유지 비용이 추가됩니다.<br></p>
+      <p>&lt;HTTPS 주요 보안방식&gt;<br>
+      [TLS(Transport Layer Security)]: SSL(Secure Socket Layer)이 표준화된 후속 버전, 지원 가능한 알고리즘을 서로 교환하고, 키 교환 및 인증, 암호화 단계를 거칩니다.<br>
+      [VPN(Virtual Private Network)]: VPN 서버를 경유하여 인터넷에 접속시키는 보안방식, VPN에서 암호화하여 송수신합니다.</p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="SSH(telnet).html">SSH(telnet)</a></li>
+        <li><a style="color:#F0EAD6;" href="FTP.html">FTP</a></li>
+        <li><a style="color:#F0EAD6;" href="TFTP.html">TFTP</a></li>
+        <li><a style="color:#F0EAD6;" href="SMTP.html">SMTP</a></li>
+        <li><a style="color:#F0EAD6;" href="SNMP.html">SNMP</a></li>
+        <li><a style="color:#F0EAD6;" href="DNS.html">DNS</a></li>
+        <li><a style="color:#F0EAD6;" href="DHCP.html">DHCP</a></li>
+        <li><a style="color:#F0EAD6;" href="HTTP.html">HTTP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>약어 정리</h4>
+    sp(space)<br>
+    cr(carriage return)<br>
+    lf(line feed)</p>
+    <p><h4>인증과 인가</h4>
+    -Authorization(인가): 인증된 사용자의 등급에 따라 부여되는 접근 권한<br>
+    -Authentication(인증): 사용자의 신원을 확인하는 절차
+    *request header에서 Authorization으로 사용된 Authentication을 의미하며, 잘못 사용된 표현이라고 합니다.</p>
+  <p><h4>URI(Uniform Resource Identifier)</h4>
+  -URL: 현재 대중화된 URI 표기법<br>
+  -URN: Uniform Resource Name의 약어로 현재는 사용되지 않는 URI 표기법<br>
+  *URI 표기법이 여럿 있어서 명확히는 URL과 URI가 분리된 개념이지만 실제로는 두 단어가 동일한 개념으로 사용됩니다.</p>
+</aside>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>ICMP<span style="font-size:small;">(Internet Control Message Protocol)</span></h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>소개</h3>
+      <p>IP는 최선을 다해 전송을 했지만 실패했을 경우 전송을 포기합니다.(Best Effort) ICMP는 이때 전송을 못한 이유를 Message로 알려주는 서비스입니다.</p>
+      <p>IP의 현재 상황, 오류 상황, 위험 경보 등을 메시지로 전송해주는 서비스입니다.
+      <h3>Message 예시</h3>
+      <p><dl>수신지 도착 불능(Destination Unreachable)<dd>:패킷이 수신지에 도달하지 못했을 경우 이 메세지를 보냅니다. (ACL에서 Deny일 경우 해당 패킷이 발송됩니다.)</dd></dl>
+        <dl>라우터 버퍼 부족<dd>:라우터는 패킷을 버퍼에 저장하고 저장된 패킷에서 수신지 주소를 파악한 뒤 전송을 시작합니다.
+          이때 버퍼의 공간에 비해 패킷이 너무 많이 들어오면 라우터는 추가 데이터를 버리고 송신측에 이에 대한 메세지를 보냅니다.</dd></dl>
+        <dl>Hop 수 초과(TTL)<dd>:패킷은 통과할 수 있는 최대 라우터 수가 정해져 있습니다. 이 수가 'Hop 수(TTL)'입니다.
+          수신지에 도달하기 전에 최대 Hop 수에 도달하면 라우터는 해당 패킷을 폐기하고 송신측에 이에 대한 메세지를 보냅니다.</dd></dl></p>
+      <h3>Command</h3>
+      <p>#ping [ip address]<br>:단순형 핑으로, 연결 성공 여부 및 응답시간만 간단하게 확인합니다.</p>
+      <p>#ping<br>:확장형 핑으로 사용할 3계층 프로토콜의 유형, 에코 패킷의 크기 및 횟수, 목적지 주소 및 출발지 주소 등을 일일이 설정하여 ping을 보냅니다.</p>
+      <p>#tracert [ip address]<br>:수신지까지의 라우팅 경로를 추적하여 각 구간별 ip와 도달시간을 확인합니다.</p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>IP 기반 프로토콜</p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="ICMP.html">ICMP</a></li>
+        <li><a style="color:#F0EAD6;" href="ARP.html">ARP</a></li>
+        <li><a style="color:#F0EAD6;" href="IGMP.html">IGMP</a></li>
+      </ul>
+      <p>IP address</p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="IPv6.html">IPv6</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>Ctrl+Shift+6</h4>
+    Cisco CLI에서 ping이나 trace 명령을 중단시키는 단축키입니다.</p>
+    <p><h4>확장형 ping</h4>
+    단순형 ping에서는 출발지 주소를 설정해줄 수 없습니다. 따라서 해당 라우터에서 목적지에 가장 인접한 인터페이스를 출발지 주소로 하는 디폴트값 외에 출발지 주소를 설정하고 싶은 경우 확장형으로 설정하여 사용합니다.</p>
+  </aside>
+
+</body>
+</html>

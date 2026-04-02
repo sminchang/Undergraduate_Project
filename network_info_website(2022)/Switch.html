@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Switch</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Switch</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+     <h3>Switching</h3>
+      <p>(MAC table 관리) <br>
+        <b>Learning</b>: 송신지 주소가 MAC 테이블에 없는 경우 해당 Port와 MAC 주소의 연관성을 MAC 테이블에 갱신합니다.<br>
+        <b>Flooding</b>: 수신지 주소가 MAC 테이블에 없는 경우 모든 포트로 해당 프레임을 전송해버립니다.</p>
+
+      <p>(Collision domain 분리)<br>
+        <b>Filtering</b>: 송신지와 수신지 주소가 같은 collision domain에 위치했을 때
+        다른 collision domain은 차단하고 전송합니다. <span style="font-size:small">(스위치의 collision domain은 각각의 port별로 나뉩니다.)</span><br>
+        <b>Forwarding</b>: 송신지와 수신지 주소가 다른 collision domain 사이에 있을 때
+        두 포트만 연결합니다.<br>
+        <span style="font-size:small">(스위치의 Filtering 기능으로 충돌 도메인을 분리함으로써 이더넷의 CSMA/CD로 인한 전송 대기 상태를
+    해소합니다.)</span></p>
+        <p><b>*Aging</b>: MAC 테이블이 주소를 기억할 시간을 설정합니다.
+         기본값은 5분으로, 해당 시간내에 같은 주소로 통신이 이루어지지 않으면 MAC 테이블에서 삭제합니다.</p>
+      <h3>VLAN<span style="font-size:small">(Virtual LANs)</span></h3>
+      <p>스위치의 한 port에 VLAN을 설정하면 동일한 VLAN으로 설정된 port끼리만 브로드캐스트를 공유합니다.
+        즉 브로드캐스트 도메인을 IP(3계층 장비)를 사용하지 않고 2계층에서 분리할 수 있는 방식입니다.
+        다만 이렇게 VLAN으로 분리된 브로드캐스트 도메인은 라우팅이 되지 않으면 상호간의 통신을 할 수 없습니다.
+        inter-VLAN, 즉 라우터의 subinterface를 통해 라우팅할 수 있습니다.</p>
+        <p>1.VLAN 생성<br>
+         <span style="color:#226b80;">-  #vlan database<br>
+        -  (vlan)#vlan[number]<br></span>
+        2.Port 연결<span style="font-size:small">(port based VLAN)</span><br>
+        <span style="color:#226b80;">
+        -  (config)#interface [Interface Type Slot/Port]<br>
+        -  (config-if)#switchport access vlan[number]<br></span>
+        3.Trunk 설정<br>
+          <span style="font-size:small">(Trunk protocol 설정으로 서로 다른 VLAN의 프레임들이 각자 자신의 VLAN 식별용 태그 헤더를 부착받습니다. 이로써 하나의 경로로 전송되는 여러 VLAN의 정보를 구분합니다.)
+          <br></span>
+          <span style="color:#226b80;">
+          -  (config)#interface [Inteface Type Slot/Port]<br>
+          <span style="font-size:x-small">-  (config-if)#switchport trunk encapsulation dot1q(자동설정 되어있는 경우가 많습니다.)</span><br>
+          -  (config-if)#switchport mode trunk<br></span>
+        *(VLAN 삭제)<br>
+        <span style="color:#226b80;">-  #vlan database<br>
+          -  (vlan)#no vlan[number]<br></span>
+       </p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>2계층 장비 프로토콜</p>
+      <ul>
+        <li><a style="color:#F0EAD6;" href="STP.html">STP</a></li>
+        <li><a style="color:#F0EAD6;" href="VTP.html">VTP</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>SVI<span style="font-size:small">(switch Virtual Interface)</span><br>(= interface VLAN 1)</h4>
+    SNMP, Telnet등을 목적으로 스위치에서 IP를 할당할 수 있도록 제공되는 인터페이스입니다. (ip 설정 후 config모드로 나와 ip default-gateway 주소도 입력해야합니다.)</p>
+  <p><h4>dot1q</h4>
+    VLAN의 encapsulation(tagging) 방식 중 하나입니다.
+    IEEE802.1q와 ISL 두가지 방식이 있는데 ISL은 잘쓰이지 않고
+    IEEE802.1q를 명령어상에서는 dot1q로 표기합니다.</p>
+  <p><h4>Stackable형</h4>
+  허브나 스위치 같은 장비를 연결하여 하나의 장비처럼 사용할 때 관련된 소프트웨어적 기능이 추가로 들어있는 장비를 Stackable 장비라고 합니다.<br>
+  해당 기능이 없는 Standalone 장비는 하드웨어적 연결만 가능합니다.</p>
+  <p><h4>delay & latency</h4>
+  delay: 지정된 시간보다 지체된 시간<br>
+  latency: 한 지점에 머무는 시간</p>
+  </aside>
+
+</body>
+</html>

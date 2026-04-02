@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>IEEE 802.11</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>개요</h3>
+      <p>무선 랜환경을 구축할 때 인코딩 방식을 규정하고 있는 프로토콜 시리즈입니다.</p>
+      <h3>AP(Access Point)</h3>
+      <p>유선 신호를 무선 신호로 변환하는 기능을 말합니다.<br>주로 해당 기능을 가진 장비를 AP로 통칭하며,
+    공유기라고 부르는 home router에서도 대부분 해당 기능을 제공합니다. 개인 PC도 설정을 통해 AP로 활용할 수 있습니다.</p>
+    <p>BSS(Basic Service Set): 1개의 AP로 무선 랜을 구축합니다.<br>
+        ESS(Extended Service Set): 2개 이상의 AP를 사용하여 무선 랜을 구축합니다. 서로 다른 AP의 주파수 대역이 겹치지 않도록 유의해서 설정해야합니다.</p>
+      <h3>주요 인코딩 방식</h3>
+       <p>FHSS(Frequency Hopping Spread Spectrum)<br>
+      802.11a에서 사용하는 인코딩 방식으로 간섭을 피해 여러 주파수 채널을 옮겨다니며 전송합니다. 요즘은 사용하지 않습니다.</p>
+      <p>DSSS(Direct Sequence Spread Spectrum)<br>
+      802.11b에서 사용하는 인코딩 방식으로 하나의 주파수 채널을 정하고 그 채널로만 전송하는 방식입니다.</p>
+      <p>OFDM(Orthogonal Frequency Division Multiplexing)<br>
+      802.11a, 802.11b에서 사용하는 인코딩 방식으로 하나의 시그널을 쪼개어 여러 주파수 채널로 전송하는 방식입니다.</p>
+      <h3>무선 표준 통신 방식</h3>
+      <P>무선 표준: 사용 주파수 | 최대 속도</P>
+      <p>802.11b: 2.4GHz | ~ 11Mbps</p>
+      <p>802.11g: 2.4GHz | ~ 54Mbps</p>
+      <p>802.11a: 5GHz | ~ 54Mbps</p>
+      <p>802.11n: 2.4G,5GHz | ~ 450Mbps</p>
+      <p>802.11ac: 5GHz | ~ 3.5Gbps</p>
+      <h3>무선 LAN 보안 방식</h3>
+      <p>무선 네트워크는 유선과 다르게 전파가 외부로 새어나갈 수 있어 보안이 더욱 강조됩니다.</p>
+      <p>WEP(Wired Equivalent Privacy)<br>:무선 랜에 처음 도입된 표준 보안으로 관리자가 설정하는 static key값을 가지고 인증(Authentication)하는 방식입니다.
+        관리자가 바꿔주지 않으면 key값이 계속 고정되어 있고 40bit의 key값이 해킹 툴로 금세 뚫리기 때문에 현재는 사용되지 않습니다.</p>
+      <p>WPA(Wi-Fi Protected Access)<br>:Username과 Password를 사용하고 Dynamic key값도 사용할 수 있습니다. 또 TKIP(Temporal Key Integrity Protocol)로 암호화(Encryption)합니다.</p>
+      <p>IEEE 802.11i<br>:WPA의 TKIP보다 강력한 AES(Advanced Encryption Standard Encryption)을 사용하여 암호화합니다. Wi-Fi에서 이를 지원하는 것을 WPA2라고 합니다.</p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+        <p>WAN<br>Framing protocol</p>
+          <ul>
+            <li><a style="color:#F0EAD6;" href="PPP.html">PPP</a></li>
+            <li><a style="color:#F0EAD6;" href="Frame Relay.html">Frame Relay</a></li>
+          </ul>
+          <p>Wireless<br>Framing protocol</p>
+        <ul><li><a style="color:#F0EAD6;" href="IEEE 802.11.html">IEEE 802.11</a></li></ul>
+      </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>PoE(Power over Ethernet)</h4>
+    :AP는 무선 장비이기 때문에 주로 천장이나 벽에서 설치합니다. 하지만 이렇게 되면 전원연결이 난감해지는데 이를 위한 기술이 PoE입니다.
+    PoE는 이더넷선(LAN선)으로 전원을 함께 공급하는 방식을 말합니다. 해당 기능은 PoE 스위치를 통해서만 사용가능합니다. 표준화된 명칭으로 IEEE 802.3af가 있습니다.</p>
+    <p><h4>SSID(Service Set ID)</h4>
+    :Wi-Fi 이름을 말합니다. 무선 네트워크에서 각 AP를 식별하는 ID값으로 100ms마다 브로드캐스트됩니다.</p>
+    <p><h4>Wi-Fi(Wireless Fidelity)</h4>
+    :무선 환경에 대한 호환성 검증 마크라고 볼 수 있습니다. Hi-Fi가 음향 품질 인증 마크인 것과 비슷한 맥락입니다.</p>
+    <p><h4>보안 용어</h4>
+    Encryption(암호화): 데이터 자체를 암호화하는 것을 말합니다. 데이터를 받은 클라이언트는 이를 복호화하는 값을 가지고 있어야합니다.</p>
+    Authentication(인증): 네트워크, 혹은 PC에 접근하려 할 때 인가된 접근인지 확인하는 절차를 말합니다. 주로 정해진 key값을 확인합니다.</p>
+</aside>
+
+</body>
+</html>

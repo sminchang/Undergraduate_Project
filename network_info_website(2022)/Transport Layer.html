@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>Transport Layer</h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>PDU: Segment</h3>
+      <h3>전반적인 역할</h3>
+      <p>Port number 부여<br>
+        송수신지 내부에서 사용할 다양한 프로세스를 식별하기 위한 번호입니다.<br>
+        같은 IP로도 port 번호에 따라 다른 여러 프로세스를 연결할 수 있습니다.</p>
+      <p>socket interface<br>
+        프로세스가 사용할 포트를 구축하고 연결하는 인터페이스입니다.<br>
+       7계층과 4계층 사이에 있는, 노드와 노드 사이의 인터페이스라고 할 수 있습니다.</p>
+      <p>connectivity<br>
+        수신측이 수신이 가능한지 여부를 확인하는 절차를 의미합니다. <br>
+        TCP의 경우 이 절차를 추가하여 무의미하게 전송되거나 누락되는 데이터가 없도록 신뢰성을 향상 시킵니다.<br>
+        UDP의 경우 이 절차를 추가하지 않아 신뢰성은 떨어지지만 신속한 전송이 가능합니다.</p> 
+      </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>Port</h4>
+      통신 장비(하드웨어)상의 Port는 물리적 port를 의미합니다.<br>
+      반면에 4계층(소프트웨어)에서의 Port는 논리적 port를 의미합니다.</p>
+    <p><h4>*port 번호 유형</h4>
+    Well-known port(0~1023):잘 알려진 포트,국제적으로 미리 예약된 포트(주로 대형 server가 소유)<br>
+    registered port(1024~49151):등록된 포트,등록해야 사용 가능한 포트<br>
+    dynamic port(49152~65535):동적 포트, 누구나 등록없이 사용할 수 있는 포트(필요시 운영체제에서 client에게 임의 부여)</p>
+  </aside>
+
+</body>
+</html>

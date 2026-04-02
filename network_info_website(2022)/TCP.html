@@ -1,0 +1,229 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+  <header>
+  <h1><a href="index.html">Digital Network Summary</a></h1>
+    <div id="layer_7">
+      <div class="dropdown">
+        <a href="Application Layer.html"><b>Application Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_6">
+      <div class="dropdown">
+        <a href="Presentation Layer.html"><b>(Presentation Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_5">
+      <div class="dropdown">
+        <a href="Session Layer.html"><b>(Session Layer)</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href=""></a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_4">
+      <div class="dropdown">
+        <a href="Transport Layer.html"><b>Transport Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+          <dt><a style="color:#F0EAD6;" href="TCP.html">TCP</a></dt>
+          <dt><a style="color:#F0EAD6;" href="UDP.html">UDP</a></dt>
+        </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_3">
+      <div class="dropdown">
+        <a href="Network Layer.html"><b>Network Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="IP.html">IP</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Router.html">Router</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_2">
+      <div class="dropdown">
+        <a href="Data Link Layer.html"><b>Data Link Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Ethernet.html">Ethernet</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Switch.html">Switch</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+    <div id="layer_1">
+      <div class="dropdown">
+        <a href="Physical Layer.html"><b>Physical<br>Layer</b></a>
+        <div class="dropdown-content">
+          <dl>
+            <dt><a style="color:#F0EAD6;" href="Cable.html">Cable</a></dt>
+            <dt><a style="color:#F0EAD6;" href="Connector.html">Connector</a></dt>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <!-- <h2>는 제목을 나타냅니다. 한 페이지에 한 번만 사용됩니다.-->
+      <h2>TCP<span style="font-size:small">(Transmission Control Protocol)</span></h2>
+      <div class="sub_space">
+      </div>
+    <article>
+      <!-- <h3>는 소제목을 나타냅니다.<p>로는 본문을 작성해주세요.-->
+      <h3>세그먼트 구조</h3>
+      <p>
+        <div style="position:absolute; top:9rem; left:-0.7rem; height:13.8rem; width:0.3rem; border:0.1rem solid; border-right:none;"></div>
+        <div style="position:absolute; top:15rem; left:-4.5rem; width:0.3rem; color:blue;">Header</div>
+      <table border>
+        <tr>
+          <td colspan=16>Source Port Address(16bits)</td>
+            <td colspan=16>Destination Port Address(16)</td>
+        </tr>
+        <tr>
+          <td colspan=32>Sequence Number(32)</td>
+        </tr>
+        <tr>
+          <td colspan=32>Acknowledgment Number(32)</td>
+        </tr>
+        <tr>
+          <td colspan=4>HLEN(4)</td>
+          <td colspan=6>Reserved(6)</td>
+          <td>U<br>R<br>G</td>
+          <td>A<br>C<br>K</td>
+          <td>P<br>S<br>H</td>
+          <td>R<br>S<br>T</td>
+          <td>S<br>Y<br>N</td>
+          <td>F<br>I<br>N</td>
+          <td colspan=16>Window Size(16)</td>
+        </tr>
+        <tr>
+          <td colspan=16>Checksum(16)</td>
+          <td colspan=16>Urgent Pointer(16)</td>
+        </tr>
+        <tr>
+          <td colspan=32>Option & Padding(0~40 Bytes)</td>
+        </tr>
+        <tr>
+          <td colspan=32 style="border:none;">+</td>
+        </tr>
+        <tr>
+          <td colspan=32 style="color:blue;">Data</td>
+        </tr>
+      </table>
+      <p>Source Port Address:송신지의 어떤 프로세스가 주는지에 대한 주소를 담고 있는 영역입니다.</p>
+      <p>Destination Port Address: 수신지의 어떤 프로세스가 받을지에 대한 주소를 담고 있는 영역입니다.</p>
+      <br><p>Sequence Number: 형성되는 세그먼트마다 MSS 단위로 순서가 되는 번호를 지정받고 저장하는 영역입니다.
+        (MSS 단위의 첫바이트가 Sequence Number가 되며, 순서는 임의의 숫자로 시작하여 최대값에 도달하면 0부터 시작합니다.)</p>
+      <br><p>Acknowledgement Number: 수신자가 다음에 받아야할 Sequence Number를 확인 응답으로 보내는 영역입니다.
+        (수신자가 이전 세그먼트를 제대로 받지 못했다면 이전 세그먼트의 Sequence Number를 보내고
+         이전 세그먼트를 제대로 받았다면 예상되는 다음 세그먼트의 Sequence Number를 보냅니다.)</p>
+      <br><p>HLEN: OPtions & Padding영역으로 인해 유동적으로 변하는 헤더의 길이를 나타내는 영역입니다.</p>
+      <p>Reserved: 미래에 사용하기 위해 남겨둔 예약 영역으로 현재는 사용되지 않습니다.(값이 0으로 채워집니다.)</p>
+      <p>Control Flags
+        <dl>
+          <dt>-URG(URGent)</dt><dd>: 송신측 상위 계층에서 긴급 데이터임을 알려주면 Urgent Pointer에 값을 채우고 곧 해당 세그먼트를 순서에 상관없이 먼저 전송합니다.</dd>
+          <dt>-ACK(ACKnowledgment)</dt><dd>: 값이 채워져 있으면 Acknowledgement number 값이 준비되었음을 알립니다.(SYN 세그먼트 전송 이후 항상 값이 채워져 있습니다.)</dd>
+          <dt>-PSH(PuSH)</dt><dd>: 값이 채워져 있으면 수신 받은 버퍼링 데이터를 가능한 한 빨리 Application Layer에 전달할 것을 알립니다.(강제 전송)</dd><br>
+          <dt>-RST(ReSeT)</dt><dd>: 연결 상의 문제가 발견되었을 때 강제로 초기화(연결 종료) 시키는 용도로 사용됩니다.</dd>
+          <dt>-SYN(SYNcronize)</dt><dd>: 연결을 시작할 때 Sequence Number 동기화에 사용됩니다.</dd>
+          <dt>-FIN(FINish)</dt><dd>: 연결을 종료하고 싶다는 뜻을 상대방에게 전달할 때 이 값을 채워서 보냅니다.</dd>
+        </dl>
+      </p>
+      <p>Window Size: 수신측에서 자신의 버퍼 여유공간을 지속적으로 통보하여 송신측에서 이에 맞는 크기로 세그먼트를 보내줄 것을 알리는데 사용됩니다.</p>
+      <br><p>Checksum: 오류를 검사하기 위한 체크섬(일정 방식으로 헤더의 데이터를 더한 값)을 저장하는 영역입니다.
+        (송신자가 세그먼트의 체크섬을 함께 보내면 수신자는 송신자의 체크섬과 자신이 받은 체크섬을 비교하여 오류를 검사합니다.)</p>
+      <p>Urgent Pointer: URG가 설정되었을 때 긴급 데이터의 위치가 Sequence Number로부터 어디까지인지 표현해주는데 사용되는 영역입니다.</p>
+    </p>
+      <h3>연결 설정 -3Ways Handshake</h3>
+      <p>
+        <dl>
+          <dt>Segment1(<b>연결 요청</b>)</dt>
+            <dd>-A측 Sequence Number(a) 소비</dd>
+            <dd>-<mark>SYN 값 '1', ACK 값 '0'</mark> 설정</dd>
+            <dd style="font-size:small;">-(Data X, Options에 MSS 포함)</dd>
+          <br><dt>Segment2(<b>연결 수락</b>)</dt>
+            <dd>-B측 Sequence Number(b) 소비</dd>
+            <dd>-<mark>SYN, ACK 값 '1'</mark> 설정</dd>
+            <dd>-Acknowledgment Number(a+1) 소비</dd>
+            <dd style="font-size:small;">-(Data X, Options에 MSS 포함)</dd>
+          <br><dt>Segment3(<b>연결 설정</b>)</dt>
+            <dd>-A측 Sequence Number(a+1) 사용</dd>
+            <dd>-<mark>SYN 값 '0', ACK 값 '1'</mark>설정</dd>
+            <dd>Acknowledgment Number(_b+1) 소비</dd>
+            <dd style="font-size:small;">-(Data X, Options 사용 안함)</dd>
+        </dl>
+    </p>
+      <h3>연결 해제 -4Ways Handshake</h3>
+      <p>
+        <dl>
+          <dt>Segment1(<b>A측 종료 요청</b>)</dt>
+            <dd>-A측 Sequence Number(x) 소비</dd>
+            <dd>-<mark>FIN 값 '1', ACK 값 '0'</mark> 설정</dd>
+          <br><dt>Segment2(<b>A측 종료 확인</b>)</dt>
+            <dd>-B측 Sequence Number(y) 소비</dd>
+            <dd>-<mark>FIN, ACK 값 '1'</mark> 설정</dd>
+            <dd>-Acknowledgment Number(x+1) 소비</dd>
+          <br><dt>Segment3(<b>B측 종료 요청</b>)</dt>
+            <dd>-B측 Sequence Number(y) 사용</dd>
+            <dd>-<mark>FIN, ACK 값 '1'</mark> 설정</dd>
+            <dd>-Acknowledgment Number(x+1) 사용</dd>
+          <br><dt>Segment4(<b>B측 종료 확인</b>)</dt>
+            <dd>-A측 Sequence Number(x) 사용</dd>
+            <dd>-<mark>FIN 값 '0', ACK 값 '1'</mark> 설정</dd>
+            <dd>-Acknowledgment Number(y+1) 소비</dd>
+        </dl>
+      </p>
+      <h3>흐름 제어 -Sliding Window</h3>
+      <p>전송되는 데이터의 양을 조절합니다.<br>
+        수신측에서 ACK과 함께 Window Size를 수시로 알려주면 송신측에서는 이에 맞는 Window Size 정하여 전송을 시작합니다.
+        Window에 포함되는 Segment들은 ACK을 받지 않아도 전송을 계속합니다.
+        ACK을 받은 Segment들은 Window에서 제외되며 그 크기만큼 다음 Segment를 Window에 포함시키게 됩니다.
+        이로써 송신지와 수신지 사이의 흐름을 제어하는 역할을 수행합니다.</p>
+      <h3>오류 제어 -Go Back n / Selective Repeat</h3>
+      <p>전송 도중 데이터가 유실되거나 잘못된 데이터가 수신되었을 경우에 대처합니다.
+        TCP 전송에서는 타이머가 작동합니다. 송신측에서는 일정 시간 이내에 수신측의 확인 응답이 없을 경우
+        이를 오류로 간주하고 재전송합니다.<br>
+        이때 오류가 발생한 지점부터 재전송을 시작하면 Go Back n 기법인 것이고, 오류가 발생한 부분만 재전송하면 Selective Repeat 기법이 된다.</p>
+    </article>
+  </section>
+
+  <nav>
+    <div id="detail_list">
+      <p>세부목록</p>
+
+    </div>
+  </nav>
+
+  <aside>
+    <!-- <h4>는 부가설명의 제목을 나타냅니다.<p>로 본문을 작성해주세요.-->
+    <p><h4>*MSS(MAX Segment Size)</h4>
+      :하나의 세그먼트가 포함할 수 있는 바이트 단위의 최대 크기를 말합니다.<p>
+    <p><h4>*Segmetation</h4>
+    :상위 계층에서 온 데이터를 전송 계층에서 받아들일 수 있는 크기로 나누는 과정을 말합니다.</p>
+  </aside>
+
+</body>
+</html>
